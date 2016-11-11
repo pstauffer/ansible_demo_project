@@ -1,0 +1,21 @@
+---
+- name: Install ntp packages
+  apt:
+    name: '{{ item }}'
+    state: present
+  with_items:
+    - ntp
+    - ntpdate
+
+#- name: include configuration part
+#  include: configuration.yml
+
+- name: configure ntp
+  template:
+    src: ntp.conf.j2
+    dest: /etc/ntp.conf
+    owner: root
+    group: root
+    mode: 0644
+  notify:
+    - restart ntp
