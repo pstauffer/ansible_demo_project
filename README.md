@@ -1,5 +1,7 @@
 # ansible_demo_project
 
+[![Build Status](https://travis-ci.org/pstauffer/ansible_demo_project.svg?branch=master)](https://travis-ci.org/pstauffer/ansible_demo_project)
+
 ## Requirements
 * Vagrant / VirtualBox
 * Ansible
