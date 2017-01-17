@@ -17,6 +17,7 @@ vagrant up
 
 # connect to vagrant box
 ssh -i id_rsa vagrant@172.1.1.101
+ssh -i id_rsa vagrant@172.1.1.102
 ```
 
 ### Debugging
