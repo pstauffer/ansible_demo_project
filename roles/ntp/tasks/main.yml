@@ -1,4 +1,12 @@
 ---
+- name: include redhat variables
+  include_vars: RedHat.yml
+  when: ansible_os_family == "RedHat"
+
+- name: include debian variables
+  include_vars: Debian.yml
+  when: ansible_os_family == "Debian"
+
 - name: Install ntp packages
   apt:
     name: '{{ item }}'
@@ -19,3 +27,9 @@
     mode: 0644
   notify:
     - restart ntp
+
+- name: start and enable ntp service
+  service:
+    name: '{{ ntp_service }}'
+    state: started
+    enabled: yes
